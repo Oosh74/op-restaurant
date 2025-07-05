@@ -1,4 +1,4 @@
-const homePage = () => {
+const menuPage = () => {
   const section = document.createElement('section');
   const title = document.createElement('h1');
   const container = document.createElement('div');
@@ -6,7 +6,7 @@ const homePage = () => {
   section.classList.add('hero-section');
   container.classList.add('section-container');
 
-  title.textContent = 'Home page';
+  title.textContent = 'Menu page';
 
   section.appendChild(container);
   container.appendChild(title);
@@ -14,4 +14,4 @@ const homePage = () => {
   return section;
 };
 
-export default homePage;
+export default menuPage;
