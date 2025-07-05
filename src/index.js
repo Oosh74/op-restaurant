@@ -7,10 +7,6 @@ import menuPage from './components/menu.js';
 const content = document.querySelector('#content');
 const navBtnArr = Array.from(document.querySelectorAll('.nav-btn'));
 
-console.log(navBtnArr);
-
-content.appendChild(homePage());
-
 const renderPage = (newPage) => {
   content.innerHTML = '';
   content.appendChild(newPage);

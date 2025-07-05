@@ -22,6 +22,7 @@ body {
   line-height: 1.5;
   /* 5. Improve text rendering */
   -webkit-font-smoothing: antialiased;
+  font-family: 'Lora';
 }
 
 /* 6. Improve media defaults */
@@ -56,6 +57,9 @@ h6 {
 /* 9. Improve line wrapping */
 p {
   text-wrap: pretty;
+  font-family: 'Lora';
+  font-size: 1rem;
+  line-height: 1.5;
 }
 h1,
 h2,
@@ -64,6 +68,9 @@ h4,
 h5,
 h6 {
   text-wrap: balance;
+  font-family: 'Playfair Display';
+  font-weight: 700;
+  line-height: 1.2;
 }
 
 /*
@@ -76,7 +83,37 @@ h6 {
 }
 
 :root {
-  --complimentary-blue: #e1e5f2;
+  --complimentary-color: #f0ede5;
+  --background-beige: #fbf9f5;
+}
+
+/* playfair-display-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./assets/fonts/playfair-display-v39-latin-regular.woff2')
+    format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* playfair-display-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 700;
+  src: url('./assets/fonts/playfair-display-v39-latin-700.woff2')
+    format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* lora-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./assets/fonts/lora-v36-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
 header {
@@ -85,7 +122,8 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-bottom: 1px solid var(--complimentary-blue);
+  border-bottom: 1px solid var(--complimentary-color);
+  background-color: #fbf9f5;
 }
 
 nav {
@@ -93,7 +131,8 @@ nav {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  flex-basis: 1200px;
+  max-width: 1200px;
+  width: 100%;
 }
 
 .nav-btns-container {
@@ -119,5 +158,34 @@ nav {
 .section-container {
   width: 1200px;
   border: 1px solid orange;
-  height: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.hero-text-column {
+  flex-basis: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-text-column h1 {
+  margin-bottom: 32px;
+}
+
+.hero-text-column p {
+  max-width: 55ch;
+}
+
+.hero-img-column {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-basis: 50%;
+}
+
+.hero-img-column img {
+  max-height: 550px;
+  width: auto;
 }
