@@ -23,6 +23,8 @@ navBtnArr.forEach((navBtn) => {
       renderPage(menuPage());
     } else if (btn === 'contact-btn') {
       renderPage(contactPage());
+    } else {
+      window.location.href = 'https://youtu.be/uE-1RPDqJAY';
     }
   });
 });

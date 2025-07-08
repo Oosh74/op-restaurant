@@ -23,6 +23,7 @@ body {
   /* 5. Improve text rendering */
   -webkit-font-smoothing: antialiased;
   font-family: 'Lora';
+  color: #2c2c2c;
 }
 
 /* 6. Improve media defaults */
@@ -71,11 +72,24 @@ h6 {
   font-family: 'Playfair Display';
   font-weight: 700;
   line-height: 1.2;
+  color: #2c2c2c;
 }
 
 /*
   10. Create a root stacking context
 */
+button {
+  -webkit-appearance: none;
+  border-radius: 0;
+  text-align: inherit;
+  background: none;
+  box-shadow: none;
+  padding: 0;
+  cursor: pointer;
+  border: none;
+  color: inherit;
+  font: inherit;
+}
 
 #root,
 #__next {
@@ -118,11 +132,9 @@ h6 {
 
 header {
   padding: 16px 0px;
-  background-color: white;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-bottom: 1px solid var(--complimentary-color);
   background-color: #fbf9f5;
 }
 
@@ -132,32 +144,61 @@ nav {
   align-items: center;
   justify-content: space-between;
   max-width: 1200px;
-  width: 100%;
+  width: 90%;
 }
 
 .nav-btns-container {
   display: flex;
+  gap: 4px;
+  margin-right: 8px;
 }
 
 .nav-logo-container {
-  flex-grow: 2;
+  margin-right: auto;
 }
 
 .nav-cta-btn {
   margin-left: 24px;
 }
 
+.nav-btn,
+#hero-btn {
+  cursor: pointer;
+  padding: 4px;
+  font-size: clamp(0.75rem, 2vw + 1rem, 1rem);
+}
+
+#order-online-btn,
+#hero-btn {
+  background-color: #8c5e3c;
+  color: white;
+  padding: 8px 16px;
+  text-align: center;
+  line-height: 1.2;
+}
+
+#hero-btn {
+  margin-top: 32px;
+  max-width: 50%;
+}
+
+.nav-btn:hover:not(#order-online-btn) {
+  border-bottom: 1px solid black;
+}
+
 .hero-section {
-  height: 100vh;
-  padding: 80px 0px;
+  min-height: 100vh;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  background-image: url('./assets/imgs/OLD_PAPER_TEXTURE-1.webp');
+  padding: clamp(56px, 5vw, 80px) 0;
 }
 
 .section-container {
-  width: 1200px;
-  border: 1px solid orange;
+  max-width: 1200px;
+  width: 90%;
   height: auto;
   display: flex;
   flex-direction: row;
@@ -188,4 +229,61 @@ nav {
 .hero-img-column img {
   max-height: 550px;
   width: auto;
+  border-radius: 24px;
+  min-height: auto;
+}
+
+footer {
+  display: flex;
+  padding: clamp(24px, 2vw, 56px) 0px;
+  align-items: center;
+  justify-content: center;
+  background-color: #fbf9f5;
+  flex-direction: column;
+}
+
+.footer-container,
+.copyright {
+  display: flex;
+  flex-direction: row;
+  max-width: 1200px;
+  gap: 24px;
+  width: 90%;
+  justify-content: center;
+  align-content: center;
+}
+
+.copyright {
+  margin-top: 40px;
+  text-align: center;
+  max-width: 75ch;
+}
+
+.footer-column {
+  display: flex;
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .section-container {
+    flex-direction: column;
+  }
+
+  .hero-text-column {
+    margin-bottom: 32px;
+  }
+
+  .nav-logo-container,
+  .nav-cta-btn,
+  .nav-btns-container {
+    margin: 0;
+  }
+
+  nav {
+    gap: 8px;
+  }
+
+  .nav-cta-btn {
+    display: none;
+  }
 }
