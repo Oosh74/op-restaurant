@@ -227,6 +227,10 @@ nav {
   align-items: center;
 }
 
+.menu-section {
+  flex-direction: column;
+}
+
 .hero-text-column {
   flex-basis: 50%;
   display: flex;
