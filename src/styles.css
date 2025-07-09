@@ -332,3 +332,20 @@ footer {
     flex-direction: column;
   }
 }
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.menu-section {
+  display: flex;
+  gap: 16px;
+}
+
+.sub-menu-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 8px;
+}
