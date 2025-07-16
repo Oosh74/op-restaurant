@@ -36,12 +36,16 @@ const contactPage = () => {
   msgLabel.setAttribute('for', 'msg');
   firstNameInput.setAttribute('id', 'first-name');
   firstNameInput.setAttribute('type', 'text');
+  firstNameInput.setAttribute('name', 'first-name');
   emailInput.setAttribute('type', 'email');
   emailInput.setAttribute('id', 'email');
+  emailInput.setAttribute('name', 'email');
   lastNameInput.setAttribute('id', 'last-name');
   lastNameInput.setAttribute('type', 'input');
+  lastNameInput.setAttribute('name', 'last-name');
   msgInput.setAttribute('id', 'msg');
   msgInput.setAttribute('form', 'contact-form');
+  msgInput.setAttribute('name', 'msg');
   form.setAttribute('id', 'contact-form');
 
   submitBtn.textContent = 'Send Message';
