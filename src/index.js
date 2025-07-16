@@ -10,6 +10,7 @@ const navBtnArr = Array.from(document.querySelectorAll('.nav-btn'));
 const renderPage = (newPage) => {
   content.innerHTML = '';
   content.appendChild(newPage);
+  window.scrollTo(0, 0);
 };
 
 navBtnArr.forEach((navBtn) => {
